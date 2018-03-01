@@ -10,6 +10,7 @@ onready var timer = get_node("Timer")
 
 var health = max_health
 var playing = false
+var dead = false
 
 var attacking = false
 var protecting = false
@@ -50,14 +51,13 @@ func projectile(angle, speed):
 	get_node("SamplePlayer2D").play("throw")
 
 func die():
+	get_node("AnimationPlayer").disconnect("finished", self, "set")
 	set_process(false)
 	stage = 3
 	player.add_exp(exp_worth)
 	get_node("AnimationPlayer").play("die")
 	get_node("SamplePlayer2D").play("death"+str(randi()%3+1))
-	get_node("../Timer").disconnect("timeout", get_node("../Timer"), "spawn")
 	get_node("../Timer").queue_free()
-	get_node("../Timer1").disconnect("timeout", get_node("../Timer1"), "spawn")
 	get_node("../Timer1").queue_free()
 	get_node("../spikes/AnimationPlayer").stop()
 	for node in get_node("../spikes").get_children():

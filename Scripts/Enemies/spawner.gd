@@ -27,4 +27,3 @@ func spawn(body=null):
 		queue_free()
 	else:
 		start()
-	print("yoo")

@@ -1070,20 +1070,32 @@ one_shot = true
 autostart = false
 script/script = ExtResource( 7 )
 enemy = ExtResource( 8 )
-pos1 = Vector2( 0, -8192 )
+pos1 = Vector2( 5120, -8192 )
 pos2 = Vector2( 30720, -1024 )
 n = -1
 
 [node name="Timer1" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 20.0
+wait_time = 10.0
 one_shot = true
 autostart = false
 script/script = ExtResource( 7 )
 enemy = ExtResource( 9 )
-pos1 = Vector2( 0, -3072 )
-pos2 = Vector2( 30720, -3072 )
+pos1 = Vector2( 4096, -3264 )
+pos2 = Vector2( 22528, -3072 )
+n = 100
+
+[node name="Timer2" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 10.0
+one_shot = true
+autostart = false
+script/script = ExtResource( 7 )
+enemy = ExtResource( 9 )
+pos1 = Vector2( 4096, -3264 )
+pos2 = Vector2( 22528, -3072 )
 n = 100
 
 [node name="spikes" type="Node2D" parent="."]
@@ -1690,6 +1702,7 @@ __meta__ = {
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="level/shapes"]
 
+transform/pos = Vector2( 1024, 0 )
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -128, -8576 )
@@ -1710,7 +1723,7 @@ _update_shape_index = 0
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="level/shapes"]
 
-transform/pos = Vector2( 28928, 0 )
+transform/pos = Vector2( 27904, 0 )
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -128, -8576 )
@@ -1854,11 +1867,11 @@ _update_shape_index = 0
 
 [node name="camera_begin" type="Position2D" parent="."]
 
-transform/pos = Vector2( 0, -8192 )
+transform/pos = Vector2( 1024, -8192 )
 
 [node name="camera_end" type="Position2D" parent="."]
 
-transform/pos = Vector2( 27648, 2816 )
+transform/pos = Vector2( 26624, 2816 )
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 12 )]
 
@@ -1903,5 +1916,9 @@ autoplay = ""
 [connection signal="timeout" from="Timer1" to="Timer1" method="spawn"]
 
 [connection signal="body_enter" from="lock" to="." method="_on_body_enter"]
+
+[connection signal="finished" from="lock/AnimationPlayer" to="Timer" method="spawn" flags=6]
+
+[connection signal="finished" from="lock/AnimationPlayer" to="Timer1" method="spawn" flags=6]
 
 
