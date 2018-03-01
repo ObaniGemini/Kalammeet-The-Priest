@@ -1,0 +1,907 @@
+[gd_scene load_steps=23 format=1]
+
+[ext_resource path="res://Data/Tilesets/tileset_2_decor.tres" type="TileSet" id=1]
+[ext_resource path="res://Data/misc/square.png" type="Texture" id=2]
+[ext_resource path="res://Data/misc/random_shape1.png" type="Texture" id=3]
+[ext_resource path="res://Data/misc/spike.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Decor/tree.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player/player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Objects/rock.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/misc/info_announcer.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Enemies/Target.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/misc/level_loader.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 3072, 64 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 1030, 64 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 768, 64 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 512, 64 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 448, 64 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 1024, 64 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 528, 72 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 1792, 96 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 1843.2, 96 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 960, 64 )
+
+[sub_resource type="RectangleShape2D" id=11]
+
+custom_solver_bias = 0.0
+extents = Vector2( 128, 4096 )
+
+[sub_resource type="RectangleShape2D" id=12]
+
+custom_solver_bias = 0.0
+extents = Vector2( 1024, 1024 )
+
+[node name="forest" type="Node2D"]
+
+[node name="TileMap1" type="TileMap" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( -17408, 0 )
+mode = 0
+tile_set = ExtResource( 1 )
+cell/size = Vector2( 128, 128 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( -2097002, 5, -2097000, 536870917, -1965932, 5, -1965926, 536870917, -1834862, 5, -1834852, 536870917, -1703792, 5, -1703778, 536870917, -1572722, 5, -1572704, 536870917, -1441652, 5, -1441630, 536870917, -1310582, 5, -1310556, 536870917, -1179512, 5, -1179482, 536870917, -1048442, 5, -1048408, 536870917 )
+
+[node name="Sprite" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 17920, -2560 )
+transform/scale = Vector2( 256, 2560 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite15" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 20736, -2560 )
+transform/scale = Vector2( 256, 2560 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite1" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 18176, -2816 )
+transform/scale = Vector2( 256, 2816 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite3" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 20480, -2816 )
+transform/scale = Vector2( 256, 2816 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite2" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 18432, -3072 )
+transform/scale = Vector2( 256, 3072 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite14" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 20224, -3072 )
+transform/scale = Vector2( 256, 3072 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite4" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 18688, -3328 )
+transform/scale = Vector2( 256, 3328 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite8" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 19968, -3328 )
+transform/scale = Vector2( 256, 3328 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite5" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 18944, -3584 )
+transform/scale = Vector2( 256, 3584 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite7" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 19712, -3584 )
+transform/scale = Vector2( 256, 3584 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite6" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 19200, -3840 )
+transform/scale = Vector2( 512, 3840 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite9" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 17664, -2304 )
+transform/scale = Vector2( 256, 2304 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite13" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 20992, -2304 )
+transform/scale = Vector2( 256, 2304 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite10" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 17408, -2048 )
+transform/scale = Vector2( 256, 256 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite12" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 21248, -2048 )
+transform/scale = Vector2( 256, 256 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite11" type="Sprite" parent="TileMap1"]
+
+transform/pos = Vector2( 18240, -896 )
+transform/scale = Vector2( 448, 896 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0.784314, 0.784314, 0.784314, 1 )
+
+[node name="tree" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 9984, -1216 )
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite1" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 10064, -1824 )
+transform/rot = -5.0
+transform/scale = Vector2( 1.75, 1.75 )
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite2" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 9872, -2592 )
+transform/rot = 10.0
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite3" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 10448, -3232 )
+transform/rot = -30.0
+transform/scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite9" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 10448, -4000 )
+transform/rot = 10.0
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite10" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 10704, -4000 )
+transform/rot = -20.0
+transform/scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite11" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 11088, -3818 )
+transform/rot = -80.0
+transform/scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite13" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 11684, -3900 )
+transform/rot = -85.0
+transform/scale = Vector2( 0.49, 0.5 )
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite12" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 12505, -3945 )
+transform/rot = -87.0
+transform/scale = Vector2( 3, 1.5 )
+texture = ExtResource( 4 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite14" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 11163, -5023.96 )
+transform/rot = -26.0
+transform/scale = Vector2( 3.9, 1.5 )
+texture = ExtResource( 4 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite15" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 9836, -5911 )
+transform/rot = 20.0388
+transform/scale = Vector2( 5.25, 3 )
+texture = ExtResource( 4 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite4" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 9452, -3618 )
+transform/rot = 40.0
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite5" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 8940, -3874 )
+transform/rot = 90.0
+transform/scale = Vector2( 0.475, 0.475 )
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite6" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 9196, -4114 )
+transform/rot = -20.0
+transform/scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite7" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 9404, -4686 )
+transform/rot = -20.0
+transform/scale = Vector2( 2, 1 )
+texture = ExtResource( 4 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite8" type="Sprite" parent="tree"]
+
+transform/pos = Vector2( 8212, -3964 )
+transform/rot = 80.0
+transform/scale = Vector2( 2.5, 1 )
+texture = ExtResource( 4 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="trees" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="tree" parent="trees" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 3979.11, -527.631 )
+transform/scale = Vector2( 5, 5 )
+
+[node name="tree1" parent="trees" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 5363.23, -406.091 )
+transform/scale = Vector2( 4.5, 4.5 )
+
+[node name="tree2" parent="trees" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 6536.69, -827.231 )
+transform/scale = Vector2( 4.75, 4.75 )
+
+[node name="tree4" parent="trees" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 8499.29, -922.968 )
+transform/scale = Vector2( 4.75, 4.75 )
+
+[node name="tree5" parent="trees" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 13108.8, -2185.4 )
+transform/scale = Vector2( 4, 4 )
+
+[node name="tree7" parent="trees" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 16609.4, -5332.43 )
+transform/scale = Vector2( 3, 3 )
+
+[node name="tree3" parent="trees" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 7732.35, -775.245 )
+transform/scale = Vector2( 4.25, 4.25 )
+
+[node name="player" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1024, -704 )
+
+[node name="level" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="sprites" type="Node2D" parent="level"]
+
+[node name="Sprite1" type="Sprite" parent="level/sprites"]
+
+transform/scale = Vector2( 6144, 128 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite13" type="Sprite" parent="level/sprites"]
+
+transform/pos = Vector2( 17468, -4831 )
+transform/scale = Vector2( 6144, 223 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite2" type="Sprite" parent="level/sprites"]
+
+transform/pos = Vector2( 0, 128 )
+transform/scale = Vector2( 6144, 384 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite11" type="Sprite" parent="level/sprites"]
+
+transform/pos = Vector2( 7168, 320 )
+transform/rot = 13.0185
+transform/scale = Vector2( 6144, 512 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite12" type="Sprite" parent="level/sprites"]
+
+transform/pos = Vector2( 13888, -4736 )
+transform/rot = 2.5
+transform/scale = Vector2( 2048, 4608 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0.862745, 0.862745, 0.862745, 1 )
+
+[node name="Sprite3" type="Sprite" parent="level/sprites"]
+
+transform/pos = Vector2( 6128, 0 )
+transform/rot = 2.0
+transform/scale = Vector2( 2048, 128 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite4" type="Sprite" parent="level/sprites"]
+
+transform/pos = Vector2( 8160, -71 )
+transform/rot = 8.0
+transform/scale = Vector2( 1536, 128 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite5" type="Sprite" parent="level/sprites"]
+
+transform/pos = Vector2( 9654, -280 )
+transform/rot = 20.0
+transform/scale = Vector2( 1024, 130 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite6" type="Sprite" parent="level/sprites"]
+
+transform/pos = Vector2( 10536, -580 )
+transform/rot = 60.0
+transform/scale = Vector2( 832, 144 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite7" type="Sprite" parent="level/sprites"]
+
+transform/pos = Vector2( 10952, -1300 )
+transform/rot = 5.0
+transform/scale = Vector2( 2048, 144 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite8" type="Sprite" parent="level/sprites"]
+
+transform/pos = Vector2( 12992, -1478.5 )
+transform/rot = 2.0
+transform/scale = Vector2( 1024, 144 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite9" type="Sprite" parent="level/sprites"]
+
+transform/pos = Vector2( 14016, -1370 )
+transform/rot = 95.0
+transform/scale = Vector2( 3584, 192 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite10" type="Sprite" parent="level/sprites"]
+
+transform/pos = Vector2( 13894.5, -4957.1 )
+transform/rot = -2.0
+transform/scale = Vector2( 3584, 224 )
+texture = ExtResource( 2 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="shapes" type="Node2D" parent="level"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="level/shapes"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 3072, 64 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D"]
+
+transform/pos = Vector2( 3072, 64 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="level/shapes"]
+
+transform/pos = Vector2( 17280, -4832 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 3072, 64.0693 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D11"]
+
+transform/pos = Vector2( 3072, 64.0693 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D1" type="StaticBody2D" parent="level/shapes"]
+
+transform/pos = Vector2( 6144, 36 )
+transform/rot = 2.0
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1024, 28 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D1"]
+
+transform/pos = Vector2( 1024, 28 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="level/shapes"]
+
+editor/display_folded = true
+transform/pos = Vector2( 8192, 41 )
+transform/rot = 8.0
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 752, -50 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D2"]
+
+transform/pos = Vector2( 752, -50 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="level/shapes"]
+
+transform/pos = Vector2( 9664, -96 )
+transform/rot = 20.0
+input/pickable = false
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 512, -112 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D3"]
+
+transform/pos = Vector2( 512, -112 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="level/shapes"]
+
+transform/pos = Vector2( 10896, -552 )
+transform/rot = 60.0
+input/pickable = false
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 224, -256 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D4"]
+
+transform/pos = Vector2( 224, -256 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="level/shapes"]
+
+editor/display_folded = true
+transform/pos = Vector2( 10944, -1248 )
+transform/rot = 5.0
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1040, 20 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D5"]
+
+transform/pos = Vector2( 1040, 20 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="level/shapes"]
+
+editor/display_folded = true
+transform/pos = Vector2( 10944, -1160 )
+transform/rot = 2.0
+input/pickable = false
+shapes/0/shape = SubResource( 7 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 2552, -168 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D6"]
+
+transform/pos = Vector2( 2552, -168 )
+shape = SubResource( 7 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="level/shapes"]
+
+editor/display_folded = true
+transform/pos = Vector2( 10944, -1248 )
+input/pickable = false
+shapes/0/shape = SubResource( 8 )
+shapes/0/transform = Matrix32( -0.0871558, -0.996195, 0.996195, -0.0871558, 3016, -1912 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D7"]
+
+transform/pos = Vector2( 3016, -1912 )
+transform/rot = 95.0
+shape = SubResource( 8 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="level/shapes"]
+
+editor/display_folded = true
+transform/pos = Vector2( 10904, -1432 )
+transform/rot = -2.0
+input/pickable = false
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 4712, -3528 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D8"]
+
+transform/pos = Vector2( 4712, -3528 )
+shape = SubResource( 9 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="level/shapes"]
+
+editor/display_folded = true
+transform/pos = Vector2( 10904, -3960 )
+input/pickable = false
+shapes/0/shape = SubResource( 10 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 768, 80 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D9"]
+
+transform/pos = Vector2( 768, 80 )
+shape = SubResource( 10 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="level/shapes"]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 11 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -128, -3968 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D10"]
+
+transform/pos = Vector2( -128, -3968 )
+shape = SubResource( 11 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="level/shapes"]
+
+editor/display_folded = true
+transform/pos = Vector2( 20480, -4960 )
+input/pickable = false
+shapes/0/shape = SubResource( 11 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -128, -3968 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D12"]
+
+transform/pos = Vector2( -128, -3968 )
+shape = SubResource( 11 )
+trigger = false
+_update_shape_index = 0
+
+[node name="camera_begin" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0, -9216 )
+
+[node name="camera_end" type="Position2D" parent="."]
+
+transform/pos = Vector2( 20224, 2816 )
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 11520, -1792 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 2816, -1024 )
+input/pickable = true
+shapes/0/shape = SubResource( 12 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 8 )
+text = "Hit"
+id = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+shape = SubResource( 12 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Area2D1" type="Area2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 12774, -5632 )
+input/pickable = true
+shapes/0/shape = SubResource( 12 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 8 )
+text = "Summon"
+id = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D1"]
+
+shape = SubResource( 12 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Target" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 14336, -5856 )
+
+[node name="level_loader" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 0, -512 )
+level = "shelter"
+
+[node name="level_loader1" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 20224, -5632 )
+level = "forest2"
+
+

@@ -1,0 +1,539 @@
+[gd_scene load_steps=19 format=1]
+
+[ext_resource path="res://Scripts/Enemies/Bosses/forest.gd" type="Script" id=1]
+[ext_resource path="res://Data/Enemies/Bosses/Forest/eyeshrink.png" type="Texture" id=2]
+[ext_resource path="res://Data/misc/sphere.png" type="Texture" id=3]
+[ext_resource path="res://Data/Enemies/Bosses/Forest/head.png" type="Texture" id=4]
+[ext_resource path="res://Data/Sounds/monster_5.wav" type="Sample" id=5]
+[ext_resource path="res://Data/Sounds/monster_3.wav" type="Sample" id=6]
+[ext_resource path="res://Data/Sounds/monster_4.wav" type="Sample" id=7]
+[ext_resource path="res://Data/Sounds/monster_1.wav" type="Sample" id=8]
+[ext_resource path="res://Data/Sounds/monster_2.wav" type="Sample" id=9]
+[ext_resource path="res://Data/Sounds/monster_6.wav" type="Sample" id=10]
+[ext_resource path="res://Data/Sounds/monster_7.wav" type="Sample" id=11]
+[ext_resource path="res://Data/Sounds/monster_8.wav" type="Sample" id=12]
+[ext_resource path="res://Data/Sounds/throw_2.wav" type="Sample" id=13]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 1024.0
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "inner"
+length = 4.0
+loop = true
+step = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:transform/rot")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 4 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "damage"
+length = 0.4
+loop = false
+step = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -128, 0 ), Vector2( 96, 0 ), Vector2( -64, 0 ), Vector2( 32, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("eye/Sprite:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 32, 0 ), Vector2( -32, 0 ), Vector2( 32, 0 ), Vector2( -16, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("eye:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -128, -64 ), Vector2( 96, 48 ), Vector2( -64, -32 ), Vector2( 32, 16 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("eye:transform/rot")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.482968, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("eye/Sprite/Sprite1:modulate")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("eye/Sprite/Sprite1/Sprite2/Sprite3:modulate")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("eye/inner/Node2D/Sprite:modulate")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("eye/inner/Node2D2/Sprite:modulate")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("eye/inner/Node2D4/Sprite:modulate")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("eye/inner/Node2D6/Sprite:modulate")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("eye/inner/Node2D8/Sprite:modulate")
+tracks/10/interp = 1
+tracks/10/imported = false
+tracks/10/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource/name = "die"
+length = 0.4
+loop = false
+step = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -128, 0 ), Vector2( 96, 0 ), Vector2( -64, 0 ), Vector2( 32, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("eye/Sprite:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 32, 0 ), Vector2( -32, 0 ), Vector2( 32, 0 ), Vector2( -16, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("eye:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -128, -64 ), Vector2( 96, 48 ), Vector2( -64, -32 ), Vector2( 32, 16 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("eye:transform/rot")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.482968, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("eye/Sprite/Sprite1:modulate")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("eye/Sprite/Sprite1/Sprite2/Sprite3:modulate")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("eye/inner/Node2D/Sprite:modulate")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("eye/inner/Node2D2/Sprite:modulate")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("eye/inner/Node2D4/Sprite:modulate")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("eye/inner/Node2D6/Sprite:modulate")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("eye/inner/Node2D8/Sprite:modulate")
+tracks/10/interp = 1
+tracks/10/imported = false
+tracks/10/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="SampleLibrary" id=5]
+
+samples/damage1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+samples/damage2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 6 )
+}
+samples/damage3 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 7 )
+}
+samples/damage4 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 8 )
+}
+samples/damage5 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 9 )
+}
+samples/death1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 10 )
+}
+samples/death2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 11 )
+}
+samples/death3 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 12 )
+}
+samples/throw = {
+"db": -5.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 13 )
+}
+
+[node name="Forest" type="KinematicBody2D" groups=[
+"enemies",
+]]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="eye" type="Node2D" parent="."]
+
+transform/rot = 360.0
+transform/scale = Vector2( 4, 4 )
+
+[node name="inner" type="Node2D" parent="eye"]
+
+editor/display_folded = true
+
+[node name="Node2D" type="Node2D" parent="eye/inner"]
+
+editor/display_folded = true
+transform/rot = 118.504
+
+[node name="Sprite" type="Sprite" parent="eye/inner/Node2D"]
+
+transform/pos = Vector2( 0, -64 )
+texture = ExtResource( 2 )
+
+[node name="Node2D1" type="Node2D" parent="eye/inner"]
+
+editor/display_folded = true
+transform/rot = 155.504
+
+[node name="Sprite" type="Sprite" parent="eye/inner/Node2D1"]
+
+transform/pos = Vector2( 0, -64 )
+texture = ExtResource( 2 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Node2D2" type="Node2D" parent="eye/inner"]
+
+editor/display_folded = true
+transform/rot = -168.496
+
+[node name="Sprite" type="Sprite" parent="eye/inner/Node2D2"]
+
+transform/pos = Vector2( 0, -64 )
+texture = ExtResource( 2 )
+
+[node name="Node2D3" type="Node2D" parent="eye/inner"]
+
+editor/display_folded = true
+transform/rot = -137.496
+
+[node name="Sprite" type="Sprite" parent="eye/inner/Node2D3"]
+
+transform/pos = Vector2( 0, -64 )
+texture = ExtResource( 2 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Node2D4" type="Node2D" parent="eye/inner"]
+
+editor/display_folded = true
+transform/rot = -101.496
+
+[node name="Sprite" type="Sprite" parent="eye/inner/Node2D4"]
+
+transform/pos = Vector2( 0, -64 )
+texture = ExtResource( 2 )
+
+[node name="Node2D5" type="Node2D" parent="eye/inner"]
+
+editor/display_folded = true
+transform/rot = -65.4959
+
+[node name="Sprite" type="Sprite" parent="eye/inner/Node2D5"]
+
+transform/pos = Vector2( 0, -64 )
+texture = ExtResource( 2 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Node2D6" type="Node2D" parent="eye/inner"]
+
+editor/display_folded = true
+transform/rot = -29.4959
+
+[node name="Sprite" type="Sprite" parent="eye/inner/Node2D6"]
+
+transform/pos = Vector2( 0, -64 )
+texture = ExtResource( 2 )
+
+[node name="Node2D7" type="Node2D" parent="eye/inner"]
+
+editor/display_folded = true
+transform/rot = 6.50413
+
+[node name="Sprite" type="Sprite" parent="eye/inner/Node2D7"]
+
+transform/pos = Vector2( 0, -64 )
+texture = ExtResource( 2 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Node2D8" type="Node2D" parent="eye/inner"]
+
+transform/rot = 42.5041
+
+[node name="Sprite" type="Sprite" parent="eye/inner/Node2D8"]
+
+transform/pos = Vector2( 0, -64 )
+texture = ExtResource( 2 )
+
+[node name="Node2D9" type="Node2D" parent="eye/inner"]
+
+editor/display_folded = true
+transform/rot = 78.5041
+
+[node name="Sprite" type="Sprite" parent="eye/inner/Node2D9"]
+
+transform/pos = Vector2( 0, -64 )
+texture = ExtResource( 2 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="eye/inner"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/inner = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "inner"
+
+[node name="Sprite" type="Sprite" parent="eye"]
+
+editor/display_folded = true
+transform/scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite1" type="Sprite" parent="eye/Sprite"]
+
+transform/scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="eye/Sprite/Sprite1"]
+
+transform/scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite3" type="Sprite" parent="eye/Sprite/Sprite1/Sprite2"]
+
+transform/scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="eye/Sprite/Sprite1/Sprite2/Sprite3"]
+
+transform/scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/damage = SubResource( 3 )
+anims/die = SubResource( 4 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="SamplePlayer2D" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 64
+config/samples = SubResource( 5 )
+config/pitch_random = 0.25
+
+[connection signal="finished" from="AnimationPlayer" to="." method="set" binds= [ "protecting", false ]]
+
+

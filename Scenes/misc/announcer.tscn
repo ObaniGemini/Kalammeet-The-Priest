@@ -1,0 +1,188 @@
+[gd_scene load_steps=10 format=1]
+
+[ext_resource path="res://Data/Fonts/font1.fnt" type="BitmapFont" id=1]
+[ext_resource path="res://Scripts/misc/announcer.gd" type="Script" id=2]
+[ext_resource path="res://Data/PS/ps_cross.png" type="Texture" id=3]
+[ext_resource path="res://Data/PS/ps_square.png" type="Texture" id=4]
+[ext_resource path="res://Data/PS/ps_triangle.png" type="Texture" id=5]
+[ext_resource path="res://Data/PS/ps_circle.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "enter"
+length = 1.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect/scale")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.4, 0.7, 1.2 ),
+"transitions": FloatArray( 0.25, 1, 4, 0.25 ),
+"update": 0,
+"values": [ Vector2( 0, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 0, 0.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.7, 1.2 ),
+"transitions": FloatArray( 4, 4, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 1280, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "info"
+length = 8.0
+loop = false
+step = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visibility/opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 4, 8 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("0:visibility/opacity")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 4, 8 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.5, 0.75, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("1:visibility/opacity")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 4, 8 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.5, 0.75, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("2:visibility/opacity")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 4, 8 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.5, 0.75, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("3:visibility/opacity")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 4, 8 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.5, 0.75, 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": FloatArray( 0.25, 0.25, 0.25, 0.25, 0.25, 1 ),
+"update": 0,
+"values": [ Vector2( -160, 0 ), Vector2( 128, 0 ), Vector2( -92, 0 ), Vector2( 64, 0 ), Vector2( -32, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visibility/opacity")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[node name="Label" type="Label"]
+
+visibility/visible = false
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 2563.0
+margin/bottom = 1444.0
+custom_fonts/font = ExtResource( 1 )
+text = "text"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/enter = SubResource( 1 )
+anims/info = SubResource( 2 )
+anims/warning = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="0" type="Sprite" parent="."]
+
+visibility/visible = false
+visibility/opacity = 0.5
+transform/pos = Vector2( 1280, 360 )
+transform/scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+
+[node name="1" type="Sprite" parent="."]
+
+visibility/visible = false
+visibility/opacity = 0.5
+transform/pos = Vector2( 1280, 360 )
+transform/scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+
+[node name="2" type="Sprite" parent="."]
+
+visibility/visible = false
+visibility/opacity = 0.5
+transform/pos = Vector2( 1280, 360 )
+transform/scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 5 )
+
+[node name="3" type="Sprite" parent="."]
+
+visibility/visible = false
+visibility/opacity = 0.5
+transform/pos = Vector2( 1280, 360 )
+transform/scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 6 )
+
+[connection signal="finished" from="AnimationPlayer" to="." method="queue_free"]
+
+

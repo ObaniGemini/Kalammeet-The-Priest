@@ -1,0 +1,142 @@
+[gd_scene load_steps=11 format=1]
+
+[ext_resource path="res://Scripts/Enemies/bush.gd" type="Script" id=1]
+[ext_resource path="res://Data/Enemies/bandits/bush1.png" type="Texture" id=2]
+[ext_resource path="res://Data/Enemies/bandits/bush2.png" type="Texture" id=3]
+[ext_resource path="res://Data/Enemies/bandits/bush3.png" type="Texture" id=4]
+[ext_resource path="res://Data/Enemies/Bosses/Forest/projectile2.png" type="Texture" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 2048.0
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="ColorRamp" id=3]
+
+offsets = FloatArray( 0, 1 )
+colors = ColorArray( 0.234375, 0.162048, 0.162048, 1, 0.171875, 0.12085, 0.12085, 0 )
+
+[sub_resource type="Animation" id=4]
+
+resource/name = "destroy"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Particles2D:config/emitting")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:visibility/opacity")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+
+length = 4.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:transform/rot")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 1, 1.1, 1.2 ),
+"transitions": FloatArray( 4, 0.25, 0.25, 1 ),
+"update": 0,
+"values": [ 0.0, 4.0, -5.0, 0.0 ]
+}
+
+[node name="bush" type="Area2D" groups=[
+"spawner",
+]]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+visibility/self_opacity = 0.2
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 2 )
+animation = "default"
+frame = 1
+
+[node name="Particles2D" type="Particles2D" parent="."]
+
+config/amount = 64
+config/lifetime = 0.5
+config/emit_timeout = 0.5
+config/emitting = false
+config/process_mode = 1
+config/explosiveness = 0.5
+config/texture = ExtResource( 5 )
+params/direction = 360.0
+params/spread = 180.0
+params/linear_velocity = 800.0
+params/spin_velocity = 5.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 100.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 1.0
+randomness/spin_velocity = 1.0
+color/color_ramp = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/destroy = SubResource( 4 )
+anims/idle = SubResource( 5 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "idle"
+
+[connection signal="body_enter" from="." to="." method="_on_body_enter"]
+
+

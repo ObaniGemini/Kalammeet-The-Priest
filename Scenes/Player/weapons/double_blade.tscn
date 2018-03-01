@@ -1,0 +1,320 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://Scripts/Player/weapons.gd" type="Script" id=1]
+[ext_resource path="res://Data/Eclers/weapons/double_blade.png" type="Texture" id=2]
+[ext_resource path="res://Data/Sounds/sword_2.wav" type="Sample" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 288, 1088 )
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "enter"
+length = 0.6
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite1:visibility/opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.3 ),
+"transitions": FloatArray( 4, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite1:transform/rot")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.3 ),
+"transitions": FloatArray( 4, 1 ),
+"update": 0,
+"values": [ -180.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite2:visibility/opacity")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 0.2, 0.5 ),
+"transitions": FloatArray( 4, 4, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite2:transform/rot")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 0.2, 0.5 ),
+"transitions": FloatArray( 4, 4, 1 ),
+"update": 0,
+"values": [ 180.0, 180.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite3:transform/rot")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.1, 0.4 ),
+"transitions": FloatArray( 4, 4, 1 ),
+"update": 0,
+"values": [ -180.0, -180.0, 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite3:visibility/opacity")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 0.1, 0.4 ),
+"transitions": FloatArray( 4, 4, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite4:transform/rot")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 0.3, 0.6 ),
+"transitions": FloatArray( 4, 4, 1 ),
+"update": 0,
+"values": [ 180.0, 180.0, 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite4:visibility/opacity")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 0.3, 0.6 ),
+"transitions": FloatArray( 4, 4, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sprite:transform/scale")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0, 0.6 ),
+"transitions": FloatArray( 4, 1 ),
+"update": 0,
+"values": [ Vector2( 3, 3 ), Vector2( 1.5, 1.5 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Sprite:visibility/opacity")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": FloatArray( 0, 0.6 ),
+"transitions": FloatArray( 4, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "exit"
+length = 0.4
+loop = false
+step = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite1:visibility/opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite3:visibility/opacity")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite2:visibility/opacity")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite4:visibility/opacity")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite:visibility/opacity")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite1:transform/rot")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ 0.0, 30.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite3:transform/rot")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ 0.0, 60.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite2:transform/rot")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ 0.0, 90.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sprite4:transform/rot")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ 0.0, 120.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Sprite:transform/rot")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 0.25, 1 ),
+"update": 0,
+"values": [ 0.0, 150.0 ]
+}
+
+[sub_resource type="SampleLibrary" id=4]
+
+samples/sword_2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+
+[node name="double_blade" type="Area2D" groups=[
+"weapon",
+]]
+
+visibility/behind_parent = true
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 32, -1024 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+damage = 12.0
+group = "enemies"
+can_parry = true
+can_dodge = true
+
+[node name="Sprite1" type="Sprite" parent="."]
+
+transform/pos = Vector2( 32, -960 )
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 32, -960 )
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 32, -960 )
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+
+transform/pos = Vector2( 32, -960 )
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 32, -960 )
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 32, -1024 )
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/enter = SubResource( 2 )
+anims/exit = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "enter"
+
+[node name="SamplePlayer" type="SamplePlayer" parent="."]
+
+config/polyphony = 2
+config/samples = SubResource( 4 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
+
+

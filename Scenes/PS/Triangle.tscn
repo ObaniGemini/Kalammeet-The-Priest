@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://Scenes/PS/Cross.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Data/PS/ps_triangle.png" type="Texture" id=2]
+
+[node name="Sprite" instance=ExtResource( 1 )]
+
+texture = ExtResource( 2 )
+
+

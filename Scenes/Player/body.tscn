@@ -1,0 +1,207 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://Data/Eclers/body/segment.png" type="Texture" id=1]
+[ext_resource path="res://Data/Eclers/artifacts/artifact2.png" type="Texture" id=2]
+[ext_resource path="res://Data/Eclers/artifacts/artifact3.png" type="Texture" id=3]
+[ext_resource path="res://Data/Eclers/artifacts/leg2.png" type="Texture" id=4]
+[ext_resource path="res://Data/Eclers/artifacts/leg.png" type="Texture" id=5]
+[ext_resource path="res://Data/Eclers/body/head.png" type="Texture" id=6]
+[ext_resource path="res://Data/Eclers/artifacts/head.png" type="Texture" id=7]
+[ext_resource path="res://Data/Eclers/artifacts/artifact1.png" type="Texture" id=8]
+
+[node name="Body" type="Node2D"]
+
+transform/pos = Vector2( 0, 24 )
+
+[node name="Torso" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 122 )
+transform/rot = -90.0
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Arms" type="Node2D" parent="Torso"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( -224, 9.79135e-06 )
+transform/rot = 90.0
+
+[node name="up_l" type="Sprite" parent="Torso/Arms"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 0, 320 )
+transform/rot = -180.0
+transform/scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="Torso/Arms/up_l"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 256, 0 )
+transform/rot = -50.0
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="Torso/Arms/up_l/Sprite"]
+
+visibility/visible = false
+visibility/behind_parent = true
+transform/pos = Vector2( 0, -48 )
+texture = ExtResource( 2 )
+centered = false
+flip_h = true
+
+[node name="handler" type="Node2D" parent="Torso/Arms/up_l/Sprite"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 216, 0 )
+transform/rot = -10.0
+transform/scale = Vector2( 1, -1 )
+
+[node name="artifact" type="Sprite" parent="Torso/Arms/up_l"]
+
+visibility/visible = false
+visibility/behind_parent = true
+transform/pos = Vector2( 0, -8 )
+transform/rot = 4.55497e-07
+texture = ExtResource( 3 )
+centered = false
+flip_h = true
+
+[node name="up_r" type="Sprite" parent="Torso/Arms"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 0, 304 )
+transform/rot = -5.0
+transform/scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="Torso/Arms/up_r"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 256, 32 )
+transform/rot = 40.0
+transform/scale = Vector2( 1, -1 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="Torso/Arms/up_r/Sprite"]
+
+visibility/visible = false
+visibility/behind_parent = true
+transform/pos = Vector2( 0, -48 )
+texture = ExtResource( 2 )
+centered = false
+flip_h = true
+
+[node name="handler" type="Node2D" parent="Torso/Arms/up_r/Sprite"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 216, 0 )
+transform/rot = -10.0
+transform/scale = Vector2( 1, -1 )
+
+[node name="artifact" type="Sprite" parent="Torso/Arms/up_r"]
+
+visibility/visible = false
+visibility/behind_parent = true
+transform/pos = Vector2( 0, -8 )
+texture = ExtResource( 3 )
+centered = false
+flip_h = true
+
+[node name="Legs" type="Node2D" parent="Torso"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( -128, 0 )
+transform/rot = 90.0
+
+[node name="up_l" type="Sprite" parent="Torso/Legs"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( -8, 369 )
+transform/rot = -140.0
+transform/scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="artifact" type="Sprite" parent="Torso/Legs/up_l"]
+
+visibility/visible = false
+visibility/behind_parent = true
+transform/pos = Vector2( 0, -16 )
+transform/rot = -1.70755e-06
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="Torso/Legs/up_l"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 256, 32 )
+transform/rot = 30.0
+transform/scale = Vector2( 1, -1 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="Torso/Legs/up_l/Sprite"]
+
+visibility/visible = false
+visibility/behind_parent = true
+transform/pos = Vector2( 0, -16 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="up_r" type="Sprite" parent="Torso/Legs"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( -24, 369 )
+transform/rot = -40.0
+transform/scale = Vector2( 0.75, -0.75 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="artifact" type="Sprite" parent="Torso/Legs/up_r"]
+
+visibility/visible = false
+visibility/behind_parent = true
+transform/pos = Vector2( 0, -16 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="Torso/Legs/up_r"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 255, 32 )
+transform/rot = 30.0
+transform/scale = Vector2( 1, -1 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="Torso/Legs/up_r/Sprite"]
+
+visibility/visible = false
+visibility/behind_parent = true
+transform/pos = Vector2( 0, -16 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Head" type="Sprite" parent="."]
+
+editor/display_folded = true
+visibility/behind_parent = true
+transform/pos = Vector2( 0, 8 )
+texture = ExtResource( 6 )
+
+[node name="artifact2" type="Sprite" parent="Head"]
+
+visibility/visible = false
+texture = ExtResource( 7 )
+
+[node name="artifact1" type="Sprite" parent="Head"]
+
+visibility/visible = false
+texture = ExtResource( 8 )
+
+

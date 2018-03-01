@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://Scripts/Menu/button.gd" type="Script" id=1]
+[ext_resource path="res://Data/misc/square.png" type="Texture" id=2]
+
+[node name="Button" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="bg" type="Sprite" parent="."]
+
+transform/scale = Vector2( 1e-05, 352 )
+texture = ExtResource( 2 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite1" type="Sprite" parent="."]
+
+visibility/opacity = 0.75
+transform/scale = Vector2( 864, 352 )
+texture = ExtResource( 2 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+visibility/opacity = 0.75
+transform/scale = Vector2( 768, 256 )
+texture = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+

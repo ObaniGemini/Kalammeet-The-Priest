@@ -1,0 +1,362 @@
+[gd_scene load_steps=12 format=1]
+
+[ext_resource path="res://Scripts/misc/unlock.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Decor/tree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Enemies/bush.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Data/misc/square.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/misc/level_loader.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7680, 64 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 128, 3072 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 4608, 1408 )
+
+[sub_resource type="Animation" id=4]
+
+resource/name = "lock"
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("../level/shapes/StaticBody2D10:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1024, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../level/shapes/StaticBody2D12:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 14592, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../camera_begin:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1024, -9216 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../camera_end:transform/pos")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 14336, 2816 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+
+resource/name = "unlock"
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("../level/shapes/StaticBody2D10:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../level/shapes/StaticBody2D12:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 15616, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../camera_begin:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -9216 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../camera_end:transform/pos")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 15360, 2816 ) ]
+}
+
+[node name="forest2" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="trees" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="tree" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 144.552, -376.602 )
+transform/scale = Vector2( 5, 5 )
+
+[node name="tree1" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 813.117, -282.768 )
+transform/scale = Vector2( 3, 3 )
+
+[node name="tree2" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1727.99, -564.269 )
+transform/scale = Vector2( 4, 4 )
+
+[node name="tree3" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 2595.96, -482.165 )
+transform/scale = Vector2( 3.75, 3.75 )
+
+[node name="tree4" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 3557.75, -646.374 )
+transform/scale = Vector2( 4.5, 4.5 )
+
+[node name="tree5" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 4909.37, -958.286 )
+transform/scale = Vector2( 5.5, 5.5 )
+
+[node name="tree6" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 6104.36, -1173.77 )
+transform/scale = Vector2( 8, 8 )
+
+[node name="tree7" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 7083.85, -644.847 )
+transform/scale = Vector2( 6, 6 )
+
+[node name="tree8" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 7984.99, -664.437 )
+transform/scale = Vector2( 4, 4 )
+
+[node name="tree9" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 8964.48, -350.998 )
+transform/scale = Vector2( 5, 5 )
+
+[node name="tree10" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 9689.31, -723.206 )
+transform/scale = Vector2( 7, 7 )
+
+[node name="tree11" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 10361.6, -468.918 )
+transform/scale = Vector2( 3, 3 )
+
+[node name="tree12" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11203.5, -608.71 )
+transform/scale = Vector2( 5, 5 )
+
+[node name="tree13" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11923.6, -939.919 )
+transform/scale = Vector2( 6, 6 )
+
+[node name="tree14" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 12686.8, -507.907 )
+transform/scale = Vector2( 4, 4 )
+
+[node name="tree15" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 13697.1, -321.871 )
+transform/scale = Vector2( 8, 8 )
+
+[node name="tree16" parent="trees" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 14967.7, -567.149 )
+transform/scale = Vector2( 10, 10 )
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1024, -704 )
+
+[node name="bush" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 8000, -128 )
+
+[node name="level" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="sprites" type="Node2D" parent="level"]
+
+editor/display_folded = true
+
+[node name="Sprite1" type="Sprite" parent="level/sprites"]
+
+transform/scale = Vector2( 15360, 128 )
+texture = ExtResource( 5 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite2" type="Sprite" parent="level/sprites"]
+
+transform/pos = Vector2( 0, 128 )
+transform/scale = Vector2( 15360, 1280 )
+texture = ExtResource( 5 )
+centered = false
+modulate = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="shapes" type="Node2D" parent="level"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="level/shapes"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 7680, 64 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D"]
+
+transform/pos = Vector2( 7680, 64 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="level/shapes"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -128, -2944 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D10"]
+
+transform/pos = Vector2( -128, -2944 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="level/shapes"]
+
+transform/pos = Vector2( 15616, 0 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -128, -2944 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D12"]
+
+transform/pos = Vector2( -128, -2944 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="camera_begin" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0, -9216 )
+
+[node name="camera_end" type="Position2D" parent="."]
+
+transform/pos = Vector2( 15360, 2816 )
+
+[node name="lock" type="Area2D" parent="."]
+
+transform/pos = Vector2( 8000, 0 )
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lock"]
+
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lock"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/lock = SubResource( 4 )
+anims/unlock = SubResource( 5 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="level_loader" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 0, -512 )
+level = "forest"
+
+[node name="level_loader1" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 15360, -512 )
+level = "forest3"
+
+[connection signal="body_enter" from="lock" to="." method="_on_body_enter"]
+
+
