@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 const protecting = false #virtual
 const dodging = false #virtual
-const steps = 0.45
-const damping = 1.10
+const steps = 0.6
+const damping = 1.3
 
 var power = 0
 var step = 1

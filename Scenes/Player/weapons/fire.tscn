@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 384.0
+radius = 256.0
 
 [sub_resource type="ColorRamp" id=2]
 
@@ -78,7 +78,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
-damage = 13.0
+damage = 16.0
 group = "enemies"
 can_parry = true
 can_dodge = true
@@ -146,7 +146,6 @@ color/color_ramp = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-visibility/visible = false
 shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0

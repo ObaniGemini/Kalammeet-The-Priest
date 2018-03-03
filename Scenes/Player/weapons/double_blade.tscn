@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 288, 1088 )
+extents = Vector2( 288, 960 )
 
 [sub_resource type="Animation" id=2]
 
@@ -225,7 +225,7 @@ tracks/9/keys = {
 
 [sub_resource type="SampleLibrary" id=4]
 
-samples/sword_2 = {
+samples/hit = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
@@ -239,14 +239,14 @@ samples/sword_2 = {
 visibility/behind_parent = true
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 32, -1024 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 32, -1152 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
-damage = 12.0
+damage = 10.0
 group = "enemies"
 can_parry = true
 can_dodge = true
@@ -283,7 +283,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 32, -1024 )
+transform/pos = Vector2( 32, -1152 )
 shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0

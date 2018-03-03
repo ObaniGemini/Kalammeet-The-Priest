@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=1]
+[gd_scene load_steps=25 format=1]
 
 [ext_resource path="res://Scripts/misc/unlock.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Decor/tree.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scripts/Player/weapons.gd" type="Script" id=10]
 [ext_resource path="res://Data/misc/square.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Objects/rock.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/misc/level_loader.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -260,6 +261,7 @@ script/script = ExtResource( 1 )
 
 [node name="decor" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, -3072 )
 
 [node name="tree" parent="decor" instance=ExtResource( 2 )]
@@ -1604,6 +1606,8 @@ autoplay = ""
 
 [node name="level" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="sprites" type="Node2D" parent="level"]
 
 editor/display_folded = true
@@ -1700,9 +1704,10 @@ __meta__ = {
 
 [node name="shapes" type="Node2D" parent="level"]
 
+editor/display_folded = true
+
 [node name="StaticBody2D5" type="StaticBody2D" parent="level/shapes"]
 
-transform/pos = Vector2( 1024, 0 )
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -128, -8576 )
@@ -1723,7 +1728,7 @@ _update_shape_index = 0
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="level/shapes"]
 
-transform/pos = Vector2( 27904, 0 )
+transform/pos = Vector2( 28928, 0 )
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -128, -8576 )
@@ -1867,11 +1872,11 @@ _update_shape_index = 0
 
 [node name="camera_begin" type="Position2D" parent="."]
 
-transform/pos = Vector2( 1024, -8192 )
+transform/pos = Vector2( 0, -8192 )
 
 [node name="camera_end" type="Position2D" parent="."]
 
-transform/pos = Vector2( 26624, 2816 )
+transform/pos = Vector2( 27648, 2816 )
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 12 )]
 
@@ -1883,6 +1888,7 @@ transform/pos = Vector2( 16384, -512 )
 
 [node name="lock" type="Area2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 14336, -4096 )
 input/pickable = true
 shapes/0/shape = SubResource( 9 )
@@ -1910,6 +1916,11 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[node name="level_loader" parent="." instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 0, -3072 )
+level = "clearing"
 
 [connection signal="timeout" from="Timer" to="Timer" method="spawn"]
 

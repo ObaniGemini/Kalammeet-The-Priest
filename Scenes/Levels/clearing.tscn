@@ -19,7 +19,7 @@ extents = Vector2( 15360, 64 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 896, 64 )
+extents = Vector2( 960, 64 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -631,7 +631,7 @@ _update_shape_index = 0
 
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 13440, -1408 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 13376, -1424 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -642,7 +642,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D1"]
 
-transform/pos = Vector2( 13440, -1408 )
+transform/pos = Vector2( 13376, -1424 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -651,7 +651,7 @@ _update_shape_index = 0
 
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 16128, -1792 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 16192, -1808 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -662,14 +662,13 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D2"]
 
-transform/pos = Vector2( 16128, -1792 )
+transform/pos = Vector2( 16192, -1808 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="level/shapes"]
 
-transform/pos = Vector2( 1024, 0 )
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -128, -2944 )
@@ -690,7 +689,7 @@ _update_shape_index = 0
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="level/shapes"]
 
-transform/pos = Vector2( 29952, 0 )
+transform/pos = Vector2( 30976, 0 )
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -128, -2944 )
@@ -711,11 +710,11 @@ _update_shape_index = 0
 
 [node name="camera_begin" type="Position2D" parent="."]
 
-transform/pos = Vector2( 1024, -9216 )
+transform/pos = Vector2( 0, -9216 )
 
 [node name="camera_end" type="Position2D" parent="."]
 
-transform/pos = Vector2( 29696, 2816 )
+transform/pos = Vector2( 30720, 2816 )
 
 [node name="lock" type="Area2D" parent="."]
 
@@ -775,8 +774,6 @@ pos2 = Vector2( 29184, -1536 )
 n = 50
 
 [connection signal="body_enter" from="lock" to="." method="_on_body_enter"]
-
-[connection signal="finished" from="lock/AnimationPlayer" to="Timer" method="spawn" flags=6]
 
 [connection signal="timeout" from="Timer" to="Timer" method="spawn"]
 

@@ -1,20 +1,25 @@
-[gd_scene load_steps=23 format=1]
+[gd_scene load_steps=26 format=1]
 
 [ext_resource path="res://Data/Tilesets/tileset_2_decor.tres" type="TileSet" id=1]
 [ext_resource path="res://Data/misc/square.png" type="Texture" id=2]
-[ext_resource path="res://Data/misc/random_shape1.png" type="Texture" id=3]
-[ext_resource path="res://Data/misc/spike.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Decor/tree.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Player/player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Objects/rock.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scripts/misc/info_announcer.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/Enemies/Target.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Enemies/Target.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Data/misc/random_shape1.png" type="Texture" id=4]
+[ext_resource path="res://Data/misc/spike.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Decor/tree.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Player/player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Objects/rock.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/misc/info_announcer.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/misc/level_loader.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 3072, 64 )
+
+[sub_resource type="RectangleShape2D" id=14]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10240, 128 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -59,14 +64,24 @@ extents = Vector2( 1843.2, 96 )
 [sub_resource type="RectangleShape2D" id=10]
 
 custom_solver_bias = 0.0
-extents = Vector2( 960, 64 )
+extents = Vector2( 1174, 64 )
+
+[sub_resource type="RectangleShape2D" id=15]
+
+custom_solver_bias = 0.0
+extents = Vector2( 640, 64 )
 
 [sub_resource type="RectangleShape2D" id=11]
 
 custom_solver_bias = 0.0
-extents = Vector2( 128, 4096 )
+extents = Vector2( 128, 6144 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="ConvexPolygonShape2D" id=12]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -1568, -1568, 1552, -1568, 1568, 1568 )
+
+[sub_resource type="RectangleShape2D" id=13]
 
 custom_solver_bias = 0.0
 extents = Vector2( 1024, 1024 )
@@ -221,15 +236,20 @@ texture = ExtResource( 2 )
 centered = false
 modulate = Color( 0.784314, 0.784314, 0.784314, 1 )
 
+[node name="Target" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 14336, -5856 )
+
 [node name="tree" type="Node2D" parent="."]
 
 editor/display_folded = true
+transform/pos = Vector2( -256, 0 )
 
 [node name="Sprite" type="Sprite" parent="tree"]
 
 transform/pos = Vector2( 9984, -1216 )
 transform/scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite1" type="Sprite" parent="tree"]
@@ -237,7 +257,7 @@ modulate = Color( 0, 0, 0, 1 )
 transform/pos = Vector2( 10064, -1824 )
 transform/rot = -5.0
 transform/scale = Vector2( 1.75, 1.75 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite2" type="Sprite" parent="tree"]
@@ -245,7 +265,7 @@ modulate = Color( 0, 0, 0, 1 )
 transform/pos = Vector2( 9872, -2592 )
 transform/rot = 10.0
 transform/scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite3" type="Sprite" parent="tree"]
@@ -253,14 +273,14 @@ modulate = Color( 0, 0, 0, 1 )
 transform/pos = Vector2( 10448, -3232 )
 transform/rot = -30.0
 transform/scale = Vector2( 1.25, 1.25 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite9" type="Sprite" parent="tree"]
 
 transform/pos = Vector2( 10448, -4000 )
 transform/rot = 10.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite10" type="Sprite" parent="tree"]
@@ -268,7 +288,7 @@ modulate = Color( 0, 0, 0, 1 )
 transform/pos = Vector2( 10704, -4000 )
 transform/rot = -20.0
 transform/scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite11" type="Sprite" parent="tree"]
@@ -276,7 +296,7 @@ modulate = Color( 0, 0, 0, 1 )
 transform/pos = Vector2( 11088, -3818 )
 transform/rot = -80.0
 transform/scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite13" type="Sprite" parent="tree"]
@@ -284,7 +304,7 @@ modulate = Color( 0, 0, 0, 1 )
 transform/pos = Vector2( 11684, -3900 )
 transform/rot = -85.0
 transform/scale = Vector2( 0.49, 0.5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite12" type="Sprite" parent="tree"]
@@ -292,7 +312,7 @@ modulate = Color( 0, 0, 0, 1 )
 transform/pos = Vector2( 12505, -3945 )
 transform/rot = -87.0
 transform/scale = Vector2( 3, 1.5 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite14" type="Sprite" parent="tree"]
@@ -300,7 +320,7 @@ modulate = Color( 0, 0, 0, 1 )
 transform/pos = Vector2( 11163, -5023.96 )
 transform/rot = -26.0
 transform/scale = Vector2( 3.9, 1.5 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite15" type="Sprite" parent="tree"]
@@ -308,14 +328,14 @@ modulate = Color( 0, 0, 0, 1 )
 transform/pos = Vector2( 9836, -5911 )
 transform/rot = 20.0388
 transform/scale = Vector2( 5.25, 3 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite4" type="Sprite" parent="tree"]
 
 transform/pos = Vector2( 9452, -3618 )
 transform/rot = 40.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite5" type="Sprite" parent="tree"]
@@ -323,7 +343,7 @@ modulate = Color( 0, 0, 0, 1 )
 transform/pos = Vector2( 8940, -3874 )
 transform/rot = 90.0
 transform/scale = Vector2( 0.475, 0.475 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite6" type="Sprite" parent="tree"]
@@ -331,7 +351,7 @@ modulate = Color( 0, 0, 0, 1 )
 transform/pos = Vector2( 9196, -4114 )
 transform/rot = -20.0
 transform/scale = Vector2( 0.35, 0.35 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite7" type="Sprite" parent="tree"]
@@ -339,7 +359,7 @@ modulate = Color( 0, 0, 0, 1 )
 transform/pos = Vector2( 9404, -4686 )
 transform/rot = -20.0
 transform/scale = Vector2( 2, 1 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="Sprite8" type="Sprite" parent="tree"]
@@ -347,49 +367,49 @@ modulate = Color( 0, 0, 0, 1 )
 transform/pos = Vector2( 8212, -3964 )
 transform/rot = 80.0
 transform/scale = Vector2( 2.5, 1 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 modulate = Color( 0, 0, 0, 1 )
 
 [node name="trees" type="Node2D" parent="."]
 
 editor/display_folded = true
 
-[node name="tree" parent="trees" instance=ExtResource( 5 )]
+[node name="tree" parent="trees" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 3979.11, -527.631 )
 transform/scale = Vector2( 5, 5 )
 
-[node name="tree1" parent="trees" instance=ExtResource( 5 )]
+[node name="tree1" parent="trees" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 5363.23, -406.091 )
 transform/scale = Vector2( 4.5, 4.5 )
 
-[node name="tree2" parent="trees" instance=ExtResource( 5 )]
+[node name="tree2" parent="trees" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 6536.69, -827.231 )
 transform/scale = Vector2( 4.75, 4.75 )
 
-[node name="tree4" parent="trees" instance=ExtResource( 5 )]
+[node name="tree4" parent="trees" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 8499.29, -922.968 )
 transform/scale = Vector2( 4.75, 4.75 )
 
-[node name="tree5" parent="trees" instance=ExtResource( 5 )]
+[node name="tree5" parent="trees" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 13108.8, -2185.4 )
 transform/scale = Vector2( 4, 4 )
 
-[node name="tree7" parent="trees" instance=ExtResource( 5 )]
+[node name="tree7" parent="trees" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 16609.4, -5332.43 )
 transform/scale = Vector2( 3, 3 )
 
-[node name="tree3" parent="trees" instance=ExtResource( 5 )]
+[node name="tree3" parent="trees" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 7732.35, -775.245 )
 transform/scale = Vector2( 4.25, 4.25 )
 
-[node name="player" parent="." instance=ExtResource( 6 )]
+[node name="player" parent="." instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 1024, -704 )
 
@@ -398,6 +418,8 @@ transform/pos = Vector2( 1024, -704 )
 editor/display_folded = true
 
 [node name="sprites" type="Node2D" parent="level"]
+
+editor/display_folded = true
 
 [node name="Sprite1" type="Sprite" parent="level/sprites"]
 
@@ -547,6 +569,8 @@ __meta__ = {
 
 [node name="shapes" type="Node2D" parent="level"]
 
+editor/display_folded = true
+
 [node name="StaticBody2D" type="StaticBody2D" parent="level/shapes"]
 
 input/pickable = false
@@ -564,6 +588,26 @@ bounce = 0.0
 
 transform/pos = Vector2( 3072, 64 )
 shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="level/shapes"]
+
+transform/pos = Vector2( 10112, -12032 )
+input/pickable = false
+shapes/0/shape = SubResource( 14 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D13"]
+
+shape = SubResource( 14 )
 trigger = false
 _update_shape_index = 0
 
@@ -612,7 +656,6 @@ _update_shape_index = 0
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="level/shapes"]
 
-editor/display_folded = true
 transform/pos = Vector2( 8192, 41 )
 transform/rot = 8.0
 input/pickable = false
@@ -679,7 +722,6 @@ _update_shape_index = 0
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="level/shapes"]
 
-editor/display_folded = true
 transform/pos = Vector2( 10944, -1248 )
 transform/rot = 5.0
 input/pickable = false
@@ -771,11 +813,10 @@ _update_shape_index = 0
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="level/shapes"]
 
-editor/display_folded = true
 transform/pos = Vector2( 10904, -3960 )
 input/pickable = false
 shapes/0/shape = SubResource( 10 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 768, 80 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 800, 80 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -786,17 +827,37 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D9"]
 
-transform/pos = Vector2( 768, 80 )
+transform/pos = Vector2( 800, 80 )
 shape = SubResource( 10 )
+trigger = false
+_update_shape_index = 0
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="level/shapes"]
+
+transform/pos = Vector2( 10904, -3960 )
+input/pickable = false
+shapes/0/shape = SubResource( 15 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -2656, 64 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D14"]
+
+transform/pos = Vector2( -2656, 64 )
+shape = SubResource( 15 )
 trigger = false
 _update_shape_index = 0
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="level/shapes"]
 
-editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 11 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, -128, -3968 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -128, -6016 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -807,14 +868,13 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D10"]
 
-transform/pos = Vector2( -128, -3968 )
+transform/pos = Vector2( -128, -6016 )
 shape = SubResource( 11 )
 trigger = false
 _update_shape_index = 0
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="level/shapes"]
 
-editor/display_folded = true
 transform/pos = Vector2( 20480, -4960 )
 input/pickable = false
 shapes/0/shape = SubResource( 11 )
@@ -834,6 +894,27 @@ shape = SubResource( 11 )
 trigger = false
 _update_shape_index = 0
 
+[node name="StaticBody2D 2" type="StaticBody2D" parent="level/shapes"]
+
+transform/pos = Vector2( 2048, -1792 )
+transform/rot = 45.0
+input/pickable = false
+shapes/0/shape = SubResource( 12 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/shapes/StaticBody2D 2"]
+
+shape = SubResource( 12 )
+trigger = false
+_update_shape_index = 0
+
 [node name="camera_begin" type="Position2D" parent="."]
 
 transform/pos = Vector2( 0, -9216 )
@@ -842,7 +923,7 @@ transform/pos = Vector2( 0, -9216 )
 
 transform/pos = Vector2( 20224, 2816 )
 
-[node name="RigidBody2D" parent="." instance=ExtResource( 7 )]
+[node name="RigidBody2D" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 11520, -1792 )
 
@@ -851,20 +932,20 @@ transform/pos = Vector2( 11520, -1792 )
 editor/display_folded = true
 transform/pos = Vector2( 2816, -1024 )
 input/pickable = true
-shapes/0/shape = SubResource( 12 )
+shapes/0/shape = SubResource( 13 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 8 )
+script/script = ExtResource( 9 )
 text = "Hit"
 id = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 trigger = false
 _update_shape_index = 0
 
@@ -873,26 +954,22 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( 12774, -5632 )
 input/pickable = true
-shapes/0/shape = SubResource( 12 )
+shapes/0/shape = SubResource( 13 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 8 )
+script/script = ExtResource( 9 )
 text = "Summon"
 id = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D1"]
 
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 trigger = false
 _update_shape_index = 0
-
-[node name="Target" parent="." instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 14336, -5856 )
 
 [node name="level_loader" parent="." instance=ExtResource( 10 )]
 

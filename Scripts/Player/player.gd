@@ -50,6 +50,7 @@ var vel = Vector2(0, 0)
 var side = 1
 
 var can_move = true
+var can_summon = true
 
 var attacking = false
 var damaged = false
@@ -375,7 +376,7 @@ func _input(event):
 			jumping = true
 			protecting = false
 			dodging = false
-		if event.is_action_pressed("summon"):
+		if event.is_action_pressed("summon") and can_summon:
 			start_summon()
 		for attack in ["hit", "kick"]:
 			if event.is_action_pressed(attack) and not (protecting or dodging):
