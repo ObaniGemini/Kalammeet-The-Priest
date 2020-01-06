@@ -6,6 +6,8 @@ func _on_body_enter(body):
 		get_node("lock/AnimationPlayer").play("lock")
 		yield(get_node("lock/AnimationPlayer"), "finished")
 		get_node("player").update_limit()
+		if( has_node("Timer") ):
+			get_node("Timer").start()
 		set_fixed_process(true)
 
 func _fixed_process(delta):

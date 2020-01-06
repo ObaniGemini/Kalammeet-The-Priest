@@ -580,6 +580,8 @@ transform/pos = Vector2( 14381.2, -181.415 )
 
 [node name="level" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="sprites" type="Node2D" parent="level"]
 
 editor/display_folded = true
@@ -606,6 +608,8 @@ __meta__ = {
 }
 
 [node name="shapes" type="Node2D" parent="level"]
+
+editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="level/shapes"]
 
